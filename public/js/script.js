@@ -1,6 +1,4 @@
-
 function payWithPaystack() {
-    console.log(document.getElementById('email').value, document.getElementById('amount').value)
     const email = document.getElementById("email").value
     const amount = document.getElementById("amount").value
     let handler = PaystackPop.setup({
@@ -15,7 +13,47 @@ function payWithPaystack() {
         callback: function (response) {
             let message = 'Payment complete! Reference: ' + response.reference;
             alert(message);
+            console.log(response.reference)
+            const ref = {
+                reference: response.reference
+            }
+            fetch('http://localhost:3000/verify-payment', {
+                method: 'POST',
+                body: JSON.stringify(ref),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => {
+                return res.json()
+            })
+            .then(resData =>console.log(resData))
+            .catch(err => console.log(err))
+            // const res = await fetch('http://localhost:3000/verify-payment', {
+            //     method: 'POST',
+            //     body: JSON.stringify(response)
+            // })
+            // if (!res.ok) {
+            //     alert('Something went wrong')
+            //     return
+            // }
+            // const resdata = await res.json()
+            // console.log(resdata)
         }
     });
     handler.openIframe();
 }
+
+// function test() {
+//     fetch('http://localhost:3000/verify-payment', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             great: 'hello'
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+//     .then(res => res.json())
+//     .then(resData => console.log(resData))
+// }

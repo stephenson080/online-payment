@@ -5,7 +5,6 @@ const boderParser = require('body-parser')
 const cors = require('cors')
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
-    console.log(process.env.PAYSTACK_SECRET_KEY, 'env')
 }
 
 app.use(cors())

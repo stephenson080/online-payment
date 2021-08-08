@@ -1,5 +1,4 @@
 const axios = require('axios').default
-console.log(process.env.NODE_ENV)
 const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY 
 exports.verifyPayment = async (req, res) => {
     // Verify payment with paystack

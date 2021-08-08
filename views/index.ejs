@@ -6,20 +6,20 @@
     <%- include('./includes/mobile-nav.ejs')  %>
     <div class="div-container">
         <div class="form-container">
-                <div class="container">
-                    <div class="form">
-                        <h3>Checkout</h3>
-                <p>please fill in the form to pay</p>
-                <hr/>
-                        <label for="name" class="black-text"><b>Full Name:</b></label>
-                        <input type="text" placeholder="enter name" id="name" name="name" required>
-                        <label for="email" class="black-text"><b>Email:</b></label>
-                        <input type="email" placeholder="enter email..." id="email" name="email" required>
-                        <label for="amount" class="black-text"><b>Amount:</b></label>
-                        <input type="tel" placeholder="enter email..." id="amount" name="amount" required>
-                        <button onclick="payWithPaystack()">Submit</button>
-                    </div>
-                </div>                      
+            <div class="container">
+                <div class="form">
+                    <h3>Checkout</h3>
+                    <p>please fill in the form to pay</p>
+                    <hr/>
+                    <label for="name" class="black-text"><b>Full Name:</b></label>
+                    <input type="text" placeholder="enter name" id="name" name="name" required>
+                    <label for="email" class="black-text"><b>Email:</b></label>
+                    <input type="email" placeholder="enter email..." id="email" name="email" required>
+                    <label for="amount" class="black-text"><b>Amount:</b></label>
+                    <input type="tel" placeholder="enter email..." id="amount" name="amount" required>
+                    <button onclick="payWithPaystack()">Submit</button>
+                </div>
+            </div>                      
         </div>
     </div>
     <script src="https://js.paystack.co/v1/inline.js"></script>

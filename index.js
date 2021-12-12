@@ -16,8 +16,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(payRoute)
 
-app.use('/', (req, res) => {
-    res.render('index', {title: 'iPAY'})
+app.post('/', (req, res) => {
+    const amount = req.body.amount
+    res.render('index', {title: 'iPAY', amount: amount})
 })
 
 app.listen(3000, () => {

@@ -27,7 +27,9 @@ function payWithPaystack() {
             .then(res => {
                 return res.json()
             })
-            .then(resData =>console.log(resData))
+            .then(resData =>{
+                console.log(resData)
+            })
             .catch(err => console.log(err))
             // const res = await fetch('http://localhost:3000/verify-payment', {
             //     method: 'POST',
